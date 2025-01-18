@@ -12,6 +12,8 @@ function App() {
 
         <img className="object-cover z-0 w-full" src={budaHome} alt="BUda junto com seus discipulos" />
     </div>
+
+    
     </>
   )
 }
