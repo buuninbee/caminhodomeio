@@ -2,7 +2,7 @@ import { motion } from "motion/react"
 
 const Title = ({title}) => {
   return (
-    <motion.h2 v initial={{ opacity: 0, scale: 0.5 }}
+    <motion.h2 initial={{ opacity: 0, scale: 0.5 }}
     animate={{ opacity: 1, scale: 1 }}
     transition={{
         duration: 2,
