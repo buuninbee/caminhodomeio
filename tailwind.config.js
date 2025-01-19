@@ -9,6 +9,12 @@ export default {
       fontFamily: {
         'sans': ['Space Grotesk'], 
         'serif': ['Lexend']
+      },
+      colors: {
+        primary: '#ffffff',
+        onPrimary: '#000000',
+        onSurface: '#212121',
+        segundary: '#E1BF09'
       }
     },
   },
