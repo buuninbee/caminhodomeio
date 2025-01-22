@@ -4,6 +4,7 @@ import Title from "./components/Title"
 import Description from "./components/Description"
 import Badge from "./components/Badge"
 import eightfoldPath from "./utils/eightfoldPath"
+import Line from "./components/Line"
 
 
 function App() {
@@ -47,17 +48,7 @@ function App() {
         <div className="grid justify-center gap-3 pb-10">
           <Title title="O nobre caminho óctuplo" />
         <div className="flex gap-3"> 
-            <motion.div 
-            initial={{ opacity: 0, scale: 0.5 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 1.3,
-              delay: 0.8,
-              ease: [0, 0.71, 0.2, 1.01],
-          }}
-          viewport={{once: true}}
-            className="h-auto w-[2px] bg-segundary">
-            </motion.div>
+            <Line />
 
             <div className="grid gap-5 py-4 w-full items-center relative">
               {eightfoldPath.map(({path}, i) => {
