@@ -5,6 +5,7 @@ import Description from "./components/Description"
 import Badge from "./components/Badge"
 import eightfoldPath from "./utils/eightfoldPath"
 import Line from "./components/Line"
+import Button from "./components/Button"
 
 
 function App() {
@@ -47,17 +48,24 @@ function App() {
       <section>
         <div className="grid justify-center gap-3 pb-10">
           <Title title="O nobre caminho óctuplo" />
-        <div className="flex gap-3"> 
-            <Line />
+          <div className="flex gap-3"> 
+              <Line />
 
-            <div className="grid gap-5 py-4 w-full items-center relative">
-              {eightfoldPath.map(({path}, i) => {
-                return(
-                  <Badge key={i} number={i + 1} path={path} />
-                )
-              })}
-            </div>
+              <div className="grid gap-5 py-4 w-full items-center relative">
+                {eightfoldPath.map(({path}, i) => {
+                  return(
+                    <Badge key={i} number={i + 1} path={path} />
+                  )
+                })}
+              </div>
+          </div>
+          <Button text="Ver mais" path="nobre-caminho-octuplo"/>
         </div>
+      </section>
+
+      <section>
+        <div>
+          <Title title="Mestres notaveis" />
         </div>
       </section>
     </main>

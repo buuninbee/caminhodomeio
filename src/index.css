@@ -5,3 +5,9 @@
 body{
     background-color: #000000;
 }
+
+@layer base {
+  :root {
+        --radius: 0.5rem;
+    }
+}
