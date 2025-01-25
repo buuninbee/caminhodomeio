@@ -7,6 +7,14 @@ import eightfoldPath from "./utils/eightfoldPath"
 import Line from "./components/Line"
 import Button from "./components/Button"
 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel"
+import Card from "./components/Card"
+
+
 
 function App() {
   return (
@@ -63,9 +71,31 @@ function App() {
         </div>
       </section>
 
-      <section>
+      <section className="pb-96">
         <div>
           <Title title="Mestres notaveis" />
+        </div>
+
+        <div>
+          <Carousel>
+            <CarouselContent>
+              <CarouselItem className="basis-2/3">
+              <div className="w-auto h-auto">
+                <Card img="src/assets/Thich-Nhat-Hanh.jpg" name="Thich nhat hanh" tag="Zen" />
+              </div>
+              </CarouselItem>
+              <CarouselItem className="basis-2/3">
+                <div className="w-auto h-auto">
+                <Card img="src/assets/Thich-Nhat-Hanh.jpg" name="Thich nhat hanh" tag="Zen" />
+              </div>
+              </CarouselItem>
+              <CarouselItem className="basis-2/3">
+                <div className="w-auto h-auto">
+                <Card img="src/assets/Thich-Nhat-Hanh.jpg" name="Thich nhat hanh" tag="Zen" />
+              </div>
+              </CarouselItem>
+            </CarouselContent>
+          </Carousel>
         </div>
       </section>
     </main>
