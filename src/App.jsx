@@ -1,11 +1,22 @@
-import {motion} from "motion/react"
 import budaHome from './assets/budaHome.png'
+import budaBackground from './assets/budaBackground.svg'
+
 import Title from "./components/Title"
 import Description from "./components/Description"
 import Badge from "./components/Badge"
 import eightfoldPath from "./utils/eightfoldPath"
 import Line from "./components/Line"
 import Button from "./components/Button"
+
+import {motion} from "motion/react"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
+
 
 import {
   Carousel,
@@ -71,12 +82,48 @@ function App() {
         </div>
       </section>
 
-      <section className="pb-96">
+      <article className="mb-8 relative">
+        <div className="pb-2">
+          <Title title="Tem alguma dúvida? Nós temos respostas." />
+        </div>
+        <Accordion type="single" collapsible className="w-full relative z-10">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Tem algum deus no budismo? </AccordionTrigger>
+          <AccordionContent>
+            Yes. It adheres to the WAI-ARIA design pattern.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>Budismo acredita em reencarnção?</AccordionTrigger>
+          <AccordionContent>
+            Yes. It comes with default styles that matches the other
+            components&apos; aesthetic.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>O que é karma?</AccordionTrigger>
+          <AccordionContent>
+            Yes. It&apos;s animated by default, but you can disable it if you
+            prefer.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-4">
+          <AccordionTrigger>Todo budista tem que ser vegano?</AccordionTrigger>
+          <AccordionContent>
+            Yes. It&apos;s animated by default, but you can disable it if you
+            prefer.
+          </AccordionContent>
+        </AccordionItem>
+        </Accordion>
+        <img className="object-cover z-0 w-auto h-full absolute top-20 -right-4" src={budaBackground} alt="BUda junto com seus discipulos" />
+      </article>
+
+      <section className="pb-8">
         <div>
           <Title title="Mestres notaveis" />
         </div>
 
-        <div>
+        <div className='mb-2'>
           <Carousel>
             <CarouselContent>
               <CarouselItem className="basis-2/3">
@@ -96,6 +143,10 @@ function App() {
               </CarouselItem>
             </CarouselContent>
           </Carousel>
+        </div>
+
+        <div className="grid justify-end">
+          <Button text="Ver mais" path="mestres-notaveis" />
         </div>
       </section>
     </main>
