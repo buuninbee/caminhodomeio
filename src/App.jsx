@@ -88,30 +88,47 @@ function App() {
         </div>
         <Accordion type="single" collapsible className="w-full relative z-10">
         <AccordionItem value="item-1">
-          <AccordionTrigger>Tem algum deus no budismo? </AccordionTrigger>
+          <AccordionTrigger>O Buda era um Deus? </AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+          Não, não era. Ele não afirmava ser um Deus, nem o filho de um Deus, nem 
+          o mensageiro de um Deus. Ele era um ser humano que se tornou que 
+          se aperfeiçoou a si próprio e ensinou que se nós seguirmos
+          seu exemplo podemos também nos aperfeiçoar
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
-          <AccordionTrigger>Budismo acredita em reencarnção?</AccordionTrigger>
+          <AccordionTrigger>O Budismo tem um código moral? </AccordionTrigger>
           <AccordionContent>
-            Yes. It comes with default styles that matches the other
-            components&apos; aesthetic.
+          Sim, tem. Os Cinco Preceitos são a base da moral budista. O Primeiro 
+          Preceito é evitar matar ou ferir seres vivos; o Segundo é evitar roubar; o Terceiro é 
+          evitar a má-conduta sexual; o Quarto é evitar mentir; e o Quinto é evitar o álcool e 
+          outras drogas intoxicantes
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
-          <AccordionTrigger>O que é karma?</AccordionTrigger>
+          <AccordionTrigger>Quais são os principais ensinamentos do Buda? </AccordionTrigger>
           <AccordionContent>
-            Yes. It&apos;s animated by default, but you can disable it if you
-            prefer.
+          Todos os muitos ensinamentos do Buda estão centrados nas Quatro 
+          Nobres Verdades, assim como o aro e as traves de uma roda se centram no eixo. Elas 
+          são chamadas de “Quatro”, porque totalizam quatro, são chamadas de “Nobres”, 
+          porque enobrecem quem as compreende, e são chamadas de “Verdades” porque, 
+          na medida em que correspondem à realidade, são verdadeiras
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4">
-          <AccordionTrigger>Todo budista tem que ser vegano?</AccordionTrigger>
+          <AccordionTrigger>Todo budista tem que ser vegetariano?</AccordionTrigger>
           <AccordionContent>
-            Yes. It&apos;s animated by default, but you can disable it if you
-            prefer.
+          Não necessariamente. O Buda não era vegetariano, ele não ensinou os 
+          seus discípulos a serem vegetarianos e mesmo nos dias de hoje muitos bons budistas 
+          não são vegetarianos. Nas escrituras budistas está dito:
+          </AccordionContent>
+          <AccordionContent>
+          Ser grosso, impiedoso, vingativo, irascível, 
+          Ter o coração malévolo, arrogante e ganancioso – isto 
+          Torna alguém impuro, e não comer carne. 
+          Manter conduta imoral, não pagar suas dívidas, 
+          Trapacear nos negócios, causar divisões entre as pessoas – 
+          Isto torna alguém impuro, e não comer carne. Sn. 246-7
           </AccordionContent>
         </AccordionItem>
         </Accordion>
