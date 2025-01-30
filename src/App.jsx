@@ -47,7 +47,7 @@ function App() {
         <img className="object-cover z-0 w-full" src={budaHome} alt="BUda junto com seus discipulos" />
     </div>
 
-    <main className="px-4 grid">
+    <main className="px-4 grid sm:px-9 lg:px-16">
       <section className="grid gap-7 pb-8">
         <div>
           <Title title="Budismo" />
@@ -163,13 +163,13 @@ function App() {
           </Carousel>
         </div>
 
-        <div className="grid justify-end">
+        {/* <div className="grid justify-end">
           <Button text="Ver mais" path="mestres-notaveis" />
-        </div>
+        </div> */}
       </section>
 
     </main>
-    
+
     <Footer/>
     </>
   )
