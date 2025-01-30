@@ -4,7 +4,7 @@ const Card = ({img, name, tag}) => {
         <img
             alt=""
             src={img}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover object-center"
         />
 
         <div className="relative h-96 grid bg-gradient-to-t from-slate-900/50 to-slate-900/25 pt-32 sm:pt-48 lg:pt-64">

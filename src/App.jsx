@@ -24,6 +24,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel"
 import Card from "./components/Card"
+import Footer from './components/Footer'
 
 
 
@@ -166,7 +167,10 @@ function App() {
           <Button text="Ver mais" path="mestres-notaveis" />
         </div>
       </section>
+
     </main>
+    
+    <Footer/>
     </>
   )
 }
