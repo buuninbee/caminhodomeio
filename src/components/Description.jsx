@@ -11,7 +11,7 @@ const Description = ({description}) => {
         ease: [0, 0.71, 0.2, 1.01],
     }} 
     viewport={{once: true}}
-    className="text-primary leading-tight text-lg">{description}</motion.p>
+    className="text-primary leading-tight text-lg sm:text-xl lg:text-2xl">{description}</motion.p>
   )
 }
 

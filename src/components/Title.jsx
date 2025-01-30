@@ -11,7 +11,7 @@ const Title = ({title}) => {
         ease: [0, 0.71, 0.2, 1.01],
     }}
     viewport={{once: true}}
-    className="font-sans text-2xl text-primary pb-2 after:block after:w-8 after:h-[2px] after:relative after:right-2 after:bottom-1 after:bg-segundary">{title}</motion.h2>
+    className="font-sans text-2xl text-primary pb-2 after:block after:w-8 after:h-[2px] after:relative after:right-2 after:bottom-1 after:bg-segundary sm:text-4xl">{title}</motion.h2>
   )
 }
 
