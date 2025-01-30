@@ -83,8 +83,8 @@ function App() {
         </div>
       </section>
 
-      <article className="mb-8 relative">
-        <div className="pb-2">
+      <article className="mb-8 relative sm:mb-16">
+        <div className="pb-2 ">
           <Title title="Tem alguma dúvida? Nós temos respostas." />
         </div>
         <Accordion type="single" collapsible className="w-full relative z-10">
