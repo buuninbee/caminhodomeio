@@ -25,13 +25,15 @@ import {
 } from "@/components/ui/carousel"
 import Card from "./components/Card"
 import Footer from './components/Footer'
+import Nav from './components/Nav'
 
 
 
 function App() {
   return (
     <>
-    <div className='grid'>
+    <Nav/>
+    <div className='grid mt-16 lg:mt-24'>
         <motion.div initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{
@@ -56,7 +58,7 @@ function App() {
 
         <div>
           <Title title='Afinal, quem é o Buda?' />
-          <Description description='Buda Shakyamuni, também conhecido como Siddhartha Gautama, foi o fundador do budismo. Ele nasceu em uma família real no que é hoje o Nepal, por volta de 563 a.C. Como jovem príncipe, Siddhartha teve uma vida confortável e protegida, mas um dia decidiu sair do palácio para explorar o mundo exterior. Durante sua jornada, ele testemunhou a velhice, a doença e a morte, o que o levou a uma profunda crise existencial. Siddhartha então iniciou uma busca espiritual pela verdade e pelo significado da vida. Ele estudou com vários mestres e praticou diversas formas de meditação e ascetismo, mas não encontrou a resposta que buscava. Foi então que, sentado debaixo de uma árvore em meditação profunda, ele finalmente alcançou a iluminação e se tornou Buda, ou seja, "o desperto".A partir daí, Buda Shakyamuni passou a ensinar o Dharma, ou seja, os ensinamentos sobre a natureza da realidade e a forma de alcançar a libertação do sofrimento. Ele viajou por toda a região, pregando o caminho do meio, que consiste em evitar tanto a indulgência quanto a mortificação, e ensinando as Quatro Nobres Verdades e o Nobre Caminho Óctuplo. Sua mensagem foi amplamente difundida e teve um impacto significativo na Índia e em outros países asiáticos, onde o budismo se espalhou e se desenvolveu em diferentes tradições.' />
+          <Description description='Buda Shakyamuni, também conhecido como Siddhartha Gautama, foi o fundador do budismo. Ele nasceu em uma família real no que é hoje o Nepal, por volta de 563 a.C. Como jovem príncipe, Siddhartha teve uma vida confortável e protegida, mas um dia decidiu sair do palácio para explorar o mundo exterior. Durante sua jornada, ele testemunhou a velhice, a doença e a morte, o que o levou a uma profunda crise existencial. Siddhartha então iniciou uma busca espiritual pela verdade e pelo significado da vida. Ele estudou com vários mestres e praticou diversas formas de meditação e ascetismo, mas não encontrou a resposta que buscava. Foi então que, sentado debaixo de uma árvore em meditação profunda, ele finalmente alcançou a iluminação e se tornou Buda, ou seja, "o desperto". A partir daí, Buda Shakyamuni passou a ensinar o Dharma, ou seja, os ensinamentos sobre a natureza da realidade e a forma de alcançar a libertação do sofrimento. Ele viajou por toda a região, pregando o caminho do meio, que consiste em evitar tanto a indulgência quanto a mortificação, e ensinando as Quatro Nobres Verdades e o Nobre Caminho Óctuplo. Sua mensagem foi amplamente difundida e teve um impacto significativo na Índia e em outros países asiáticos, onde o budismo se espalhou e se desenvolveu em diferentes tradições.' />
         </div>
 
         <div>
