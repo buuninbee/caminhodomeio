@@ -32,10 +32,10 @@ const Nav = () => {
                             <li>
                                 <NavLink className="text-primary transition hover:text-gray-300 md:text-lg" to="mestres-notaveis">Mestres notaveis</NavLink>
                             </li>
-                            <li className="text-primary transition hover:text-gray-300 md:text-lg grid grid-cols-auto gap-2 relative cursor-pointer" onClick={() => {setDropmenu(!dropMenu)}}>
+                            <li className="text-primary transition hover:text-gray-300 md:text-lg grid grid-cols-auto gap-2 relative cursor-pointer" onMouseEnter={() => {setDropmenu(!dropMenu)}}>
                                 Fundamentos do budismo
                                 <img className="w-3 h-full col-start-2" src={`${dropMenu ? downArrow : upArrow }`} alt="" />
-                                <ul className={`absolute w-full top-6 bg bg-transparent/95 py-3 px-5 flex flex-col gap-2 ${dropMenu ? "hidden" : "flex"}`}>
+                                <ul className={`absolute w-full top-6 bg bg-transparent/95 py-3 px-5 flex-col gap-2 ${dropMenu ? "flex" : "hidden"}`}>
                                     <li className="border-b border-gray-800">
                                         <NavLink className="text-primary transition hover:text-gray-300" to="nobre-caminho">O nobre caminho</NavLink>
                                     </li>
