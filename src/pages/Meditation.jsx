@@ -7,6 +7,26 @@ import howDoMeditation from "../assets/whatsIsMeditation.png"
 
 import {motion} from "motion/react"
 import Footer from "@/components/Footer"
+import LinkToVideos from "@/components/LinkToVideos"
+
+const videosToMeditation = [
+  {
+    name: 'Guia básico para meditação budista', 
+    path: 'https://youtu.be/mC8h00c5SM0?si=EJFx67Zsk__wSPTE'
+  },
+  {
+    name: 'Técnicas meditação', 
+    path: 'https://youtu.be/9Lzozzq3USY?si=TgjuwSWG1ElAbKQk'
+  },
+  {
+    name: 'Genzo Sensei - O que é zazen?', 
+    path: 'https://youtu.be/33woAJXjDF0?si=pvOfLCtNiB_O-sgE'
+  },
+  {
+    name: 'Sobre a generosidade e a prática de meditação', 
+    path: 'https://www.youtube.com/live/iuC-w_DUYi8?si=5v-MW_Bb4PcM-kmJ'
+  },
+]
 
 const Meditation = () => {
   return (
@@ -20,13 +40,13 @@ const Meditation = () => {
                 duration: 1,
                 delay: 0.8,
                 ease: [0, 0.71, 0.2, 1.01],
-            }} className="absolute z-10 grid self-end  px-4">
+            }} className="absolute z-10 grid self-end px-4 sm:px-9 lg:px-16">
             <Title title="Meditação" />
         </motion.div>
         <img className="object-cover z-0 w-full lg:h-[700px] lg:object-fill" src={meditationBg} alt="MOnge meditanto em uma floresta na chuva" />
       </div>
 
-      <main className="px-4">
+      <main className="px-4 sm:px-9 lg:px-16">
         <div className="pb-6">
           <Description description="Há uma diversidade de tipos de meditação budista, abrangendo múltiplas abordagens, métodos e técnicas, cada um com suas próprias finalidades. Algumas escolas enfatizam um método específico, enquanto outras incorporam uma variedade de métodos" />
         </div>
@@ -58,7 +78,7 @@ const Meditation = () => {
             <Description description="O início do dia, após acordar, é um dos melhores momentos para meditar, já que o corpo está descansado e alerta, e a mente, mais tranquila, pois ainda não foi perturbada pelos eventos do dia. Meditar antes de dormir também é benéfico, mas o cansaço pode tornar mais difícil evitar adormecer. Se possível, faça uma sessão pela manhã." />
 
             <div className="grid py-4">
-              <img className="w-full justify-self-center sm:w-8/12" src={howDoMeditation} alt="uma série de poses de como meditar" />
+              <img className="w-full justify-self-center sm:w-8/12 lg:w-1/3" src={howDoMeditation} alt="uma série de poses de como meditar" />
             </div>
 
             <div>
@@ -82,7 +102,7 @@ const Meditation = () => {
                   <p>Coluna e pescoço devem ficar direitos, alinhados, mas de forma relaxada, sem tenção.</p>
                 </li>
                 <li>
-                Mantenha o corpo imóvel (faça o melhor que conseguir, tenha atenção aos limites do seu corpo para não o ferir). Um corpo imóvel ajuda a estabilizar a mente.
+                Mantenha o corpo imóvel faça o melhor que conseguir, tenha atenção aos limites do seu corpo para não o ferir. Um corpo imóvel ajuda a estabilizar a mente.
                 </li>
               </ul>
             </div>
@@ -97,6 +117,23 @@ const Meditation = () => {
 
             <Description description="É recomendável realizar pequenas meditações ao longo do dia, como um minuto de respiração consciente em diferentes momentos. Esperar em uma fila, por exemplo, é uma boa oportunidade para se reconectar com o presente. Atividades como comer ou lavar louça com plena atenção também são práticas válidas. A meditação deve ser um exercício mental constante na rotina diária. A prática regular da meditação é essencial. Meditar esporadicamente, como uma vez ao mês ou alguns dias no ano, é ineficaz. Regularidade não implica em meditar diariamente, mas para que seja efetivo, é crucial manter uma frequência e constância na prática." />
           </div>
+        </section>
+
+        <section className="pb-8">
+          <Title title="Vídeos relacionados à meditação" />
+
+          <ul className="grid gap-4 pt-4">
+            {
+              videosToMeditation.map(({name, path}, i) => {
+                return(
+                <li key={i}>
+                  <LinkToVideos title={name} path={path} />
+                </li>
+                )
+              })
+            }
+          </ul>
+
         </section>
       </main>
 
