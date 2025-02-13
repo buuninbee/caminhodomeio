@@ -2,12 +2,14 @@ import { useState } from "react"
 import budaLogo from "../assets/budaLogo.svg"
 import downArrow from "../assets/downArrow.svg"
 import upArrow from "../assets/upArrow.svg"
+import openIcon from "../assets/openIcon.svg"
+import closeIcon from "../assets/closeIcon.svg"
 
 
 import { NavLink } from "react-router"
 
 const Nav = () => {
-  const [openMenu, setopenMenu] = useState(false)
+  const [openMenu, setOpenMenu] = useState(false)
   const [dropMenu, setDropmenu] = useState(false)
 
   return (
@@ -37,7 +39,7 @@ const Nav = () => {
                                 <img className="w-3 h-full col-start-2" src={`${dropMenu ? downArrow : upArrow }`} alt="" />
                                 <ul className={`absolute w-full top-6 bg bg-transparent/95 py-3 px-5 flex-col gap-2 ${dropMenu ? "flex" : "hidden"}`}>
                                     <li className="border-b border-gray-800">
-                                        <NavLink className="text-primary transition hover:text-gray-300" to="nobre-caminho">O nobre caminho</NavLink>
+                                        <NavLink className="text-primary transition hover:text-gray-300" to="nobre-caminho-octuplo">O nobre caminho</NavLink>
                                     </li>
                                     <li className="border-b border-gray-800">
                                         <NavLink className="text-primary transition hover:text-gray-300" to="cinco-preceitos">Os 5 preceitos</NavLink>
@@ -77,7 +79,7 @@ const Nav = () => {
                                 <img className="w-3 h-full col-start-2" src={`${dropMenu ? downArrow : upArrow }`} alt="" />
                                 <ul className={`flex flex-col w-full top-6 ml-4 gap-2 ${dropMenu ? "hidden" : "flex"} `}>
                                     <li>
-                                        <NavLink className="text-primary transition hover:text-gray-300" to="nobre-caminho">O nobre caminho</NavLink>
+                                        <NavLink className="text-primary transition hover:text-gray-300" to="nobre-caminho-octuplo">O nobre caminho</NavLink>
                                     </li>
                                     <li>
                                         <NavLink className="text-primary transition hover:text-gray-300" to="cinco-preceitos">Os 5 preceitos</NavLink>
@@ -102,19 +104,10 @@ const Nav = () => {
                     <div className="flex row-start-1 col-span-3 items-center justify-end gap-4">
                         <div className="block md:hidden">
                             <button
-                                className="rounded-sm bg-primary p-2 text-gray-600 transition hover:text-gray-600/75"
-                            onClick={() => setopenMenu(!openMenu)}
+                                className="rounded-sm bg-black p-2 text-gray-600 transition hover:text-gray-600/75"
+                            onClick={() => setOpenMenu(!openMenu)}
                             >
-                                <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="size-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                >
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
+                               <img className="w-8 h-auto"  src={`${openMenu ? openIcon : closeIcon }`} alt="" />
                             </button>
                         </div>
                     </div>

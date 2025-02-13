@@ -1,6 +1,8 @@
+import Nav from "@/components/Nav"
+
 const eightfoldPath = () => {
   return (
-    <div className="text-segundary">eightfoldPath</div>
+    <Nav />
   )
 }
 

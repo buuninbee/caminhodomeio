@@ -1,4 +1,4 @@
-import mongeMeditando from "../assets/mogeMeditando.svg"
+import mongeMeditando from "../assets/monkFooter.svg"
 
 const Footer = () => {
   return (
