@@ -24,15 +24,10 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel"
 import Card from "./components/Card"
-import Footer from './components/Footer'
-import Nav from './components/Nav'
-
-
 
 function App() {
   return (
     <>
-    <Nav/>
     <div className='grid mt-16 lg:mt-24'>
         <motion.div initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -172,7 +167,6 @@ function App() {
 
     </main>
 
-    <Footer/>
     </>
   )
 }

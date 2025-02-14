@@ -36,7 +36,7 @@ const Nav = () => {
                             </li>
                             <li className="text-primary transition hover:text-gray-300 md:text-lg grid grid-cols-auto gap-2 relative cursor-pointer" onMouseEnter={() => {setDropmenu(!dropMenu)}}>
                                 Fundamentos do budismo
-                                <img className="w-3 h-full col-start-2" src={`${dropMenu ? downArrow : upArrow }`} alt="" />
+                                <img className="w-3 h-full col-start-2" src={`${dropMenu ? upArrow : downArrow }`} alt="" />
                                 <ul className={`absolute w-full top-6 bg bg-transparent/95 py-3 px-5 flex-col gap-2 ${dropMenu ? "flex" : "hidden"}`}>
                                     <li className="border-b border-gray-800">
                                         <NavLink className="text-primary transition hover:text-gray-300" to="nobre-caminho-octuplo">O nobre caminho</NavLink>
@@ -107,7 +107,7 @@ const Nav = () => {
                                 className="rounded-sm bg-black p-2 text-gray-600 transition hover:text-gray-600/75"
                             onClick={() => setOpenMenu(!openMenu)}
                             >
-                               <img className="w-8 h-auto"  src={`${openMenu ? openIcon : closeIcon }`} alt="" />
+                               <img className="w-6 h-auto"  src={`${openMenu ? openIcon : closeIcon }`} alt="" />
                             </button>
                         </div>
                     </div>

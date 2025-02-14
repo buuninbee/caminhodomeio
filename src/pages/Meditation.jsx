@@ -1,13 +1,11 @@
-import Nav from "@/components/Nav"
 import meditationBg from "../assets/meditation.png"
 import Title from "@/components/Title"
 import Description from "@/components/Description"
 import howDoMeditation from "../assets/whatsIsMeditation.png"
+import LinkToVideos from "@/components/LinkToVideos"
 
 
 import {motion} from "motion/react"
-import Footer from "@/components/Footer"
-import LinkToVideos from "@/components/LinkToVideos"
 
 const videosToMeditation = [
   {
@@ -31,8 +29,6 @@ const videosToMeditation = [
 const Meditation = () => {
   return (
     <>
-      <Nav/>
-
       <div className='grid mt-16 lg:mt-24'>
         <motion.div initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -43,7 +39,7 @@ const Meditation = () => {
             }} className="absolute z-10 grid self-end px-4 sm:px-9 lg:px-16">
             <Title title="Meditação" />
         </motion.div>
-        <img className="object-cover z-0 w-full lg:h-[700px] lg:object-fill" src={meditationBg} alt="MOnge meditanto em uma floresta na chuva" />
+        <img className="object-cover z-0 w-full lg:h-[700px] lg:object-fill" src={meditationBg} alt="Monge meditanto em uma floresta na chuva" />
       </div>
 
       <main className="px-4 sm:px-9 lg:px-16">
@@ -136,8 +132,6 @@ const Meditation = () => {
 
         </section>
       </main>
-
-      <Footer />
     </>
   )
 }
