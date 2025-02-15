@@ -26,7 +26,7 @@ const videosToFivePrecepts = [
       name: 'Os cinco preceitos budistas (pañca sīla)', 
       path: 'https://youtu.be/p5LU7-0RDBI?si=706oZuFfKIWjmLFw'
     },
-  ]
+]
   
 
 

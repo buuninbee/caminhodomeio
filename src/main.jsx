@@ -11,6 +11,7 @@ import App from './App.jsx'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import FivePrecepts from './pages/FivePrecepts'
+import FourNobleTruths from './pages/FourNobleTruths'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')).render(
       <Route path='/mestres-notaveis'  element={<Notablemasters />}/>
       <Route path='/meditacao'  element={<Meditation />}/>
       <Route path='/cinco-preceitos'  element={<FivePrecepts />}/>
+      <Route path='/quatros-nobres-verdades'  element={<FourNobleTruths />}/>
     </Routes>
     <Footer />
   </BrowserRouter>,
