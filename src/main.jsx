@@ -15,6 +15,7 @@ import FourNobleTruths from './pages/FourNobleTruths'
 import ThreeJewels from './pages/ThreeJewels'
 import Karma from './pages/Karma'
 import ThreeMentalPoisons from './pages/ThreeMentalPoisons'
+import Books from './pages/Books'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -29,6 +30,7 @@ createRoot(document.getElementById('root')).render(
       <Route path='/tres-joias'  element={<ThreeJewels />}/>
       <Route path='/karma'  element={<Karma />}/>
       <Route path='/tres-venenos-mentais'  element={<ThreeMentalPoisons />}/>
+      <Route path='/livros'  element={<Books />}/>
     </Routes>
     <Footer />
   </BrowserRouter>,
