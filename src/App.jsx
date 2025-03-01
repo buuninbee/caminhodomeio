@@ -76,13 +76,13 @@ function App() {
                 })}
               </div>
           </div>
-          <Button text="Ver mais" path="nobre-caminho-octuplo"/>
+          <Button text="Ver mais" variant="filled" path="nobre-caminho-octuplo"/>
         </div>
       </section>
 
       <article className="mb-8 relative sm:mb-16">
         <div className="pb-2 ">
-          <Title title="Tem alguma dúvida? Nós temos respostas." />
+          <Title title="Tem alguma dúvida? Nós temos respostas" />
         </div>
         <Accordion type="single" collapsible className="w-full relative z-10">
         <AccordionItem value="item-1">
