@@ -1,8 +1,7 @@
 import Tag from "@/components/Tag";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import {motion} from "motion/react"
 import booksBg from "../assets/books.png"
@@ -22,7 +21,7 @@ const Books = () => {
   const db = getFirestore(firebaseConfig)
   const booksCollectionRef = collection(db, "livros")
 
-useEffect(() => {
+  useEffect(() => {
     const getBooks = async () => {
         try {
             // Primeiro, tenta carregar os dados do cache
