@@ -1,6 +1,8 @@
 import budaHome from './assets/budaHome.png'
 import budaBackground from './assets/budaBackground.svg'
 
+import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
+
 import Title from "./components/Title"
 import Description from "./components/Description"
 import Badge from "./components/Badge"
@@ -16,16 +18,49 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
-
-
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel"
 import Card from "./components/Card"
 
+import { db, collection, getDocs} from "./utils/firebaseConfig"
+import { useEffect, useState } from 'react'
+
+
 function App() {
+  const [masters, setMasters] = useState([])
+
+  const mastersCollectionRef = collection(db, "mestres")
+
+  useEffect(() => {
+    const getMasters = async () => {
+        try {
+            // Primeiro, tenta carregar os dados do cache
+            const data = await getDocs(mastersCollectionRef, { source: "cache" });
+            if (!data.empty) {
+                setMasters(data.docs.map(doc => doc.data()));
+            }
+
+            // Se o cache não tiver dados, busca do servidor
+            const freshData = await getDocs(mastersCollectionRef, { source: "server" });
+            setMasters(freshData.docs.map(doc => doc.data()));
+        } catch (error) {
+            console.error("Erro ao buscar mestres:", error);
+        }
+    };
+
+    getMasters();
+}, []);
+
+const sliderLeft = () => {
+  const slider = document.getElementById("slider")
+
+  slider.scrollLeft = slider.scrollLeft + 380
+}
+
+  const sliderRight = () => {
+    const slider = document.getElementById("slider")
+
+    slider.scrollLeft = slider.scrollLeft - 380
+  }
+
   return (
     <>
     <div className='grid mt-16 lg:mt-24'>
@@ -133,40 +168,38 @@ function App() {
         <img className="object-cover z-0 w-auto h-full absolute top-20 -right-4" src={budaBackground} alt="BUda junto com seus discipulos" />
       </article>
 
-      <section className="pb-8">
+      <section className="pb-8 relative">
         <div>
           <Title title="Mestres notaveis" />
         </div>
 
-        <div className='mb-2'>
-          <Carousel>
-            <CarouselContent>
-              <CarouselItem className="basis-2/3">
-              <div className="w-auto h-auto">
-                <Card img="src/assets/Thich-Nhat-Hanh.jpg" name="Thich nhat hanh" tag="Zen" />
-              </div>
-              </CarouselItem>
-              <CarouselItem className="basis-2/3">
-                <div className="w-auto h-auto">
-                <Card img="src/assets/Thich-Nhat-Hanh.jpg" name="Thich nhat hanh" tag="Zen" />
-              </div>
-              </CarouselItem>
-              <CarouselItem className="basis-2/3">
-                <div className="w-auto h-auto">
-                <Card img="src/assets/Thich-Nhat-Hanh.jpg" name="Thich nhat hanh" tag="Zen" />
-              </div>
-              </CarouselItem>
-            </CarouselContent>
-          </Carousel>
+        <div className="overflow-hidden h-96">
+          <div className="mb-2 flex absolute w-full snap-x snap-mandatory" >
+              <ul id='slider' className="flex gap-4 overflow-x-auto whitespace-nowrap scroll-smooth scrollbar-none">
+              {
+                masters.map( (master, i) => {
+                  return(
+                  <li key={i} className="snap-center select-none">
+                    <div className="w-auto h-auto">
+                      <Card img={master.imagem} name={master.nome} tag={master.tradição} />
+                    </div>
+                </li>
+                  )
+                })
+              }
+              </ul>
+          </div>
         </div>
+        <div className="flex items-center mt-3 justify-between">
+          <div className='flex gap-4 text-white cursor-pointer'>
+            <FaArrowCircleLeft onClick={sliderRight} size={30} />
+            <FaArrowCircleRight onClick={sliderLeft} size={30} />
+          </div>
 
-        {/* <div className="grid justify-end">
-          <Button text="Ver mais" path="mestres-notaveis" />
-        </div> */}
+          <Button variant='outline' text="Ver mais" path="mestres-notaveis" />
+        </div>
       </section>
-
     </main>
-
     </>
   )
 }

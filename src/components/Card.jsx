@@ -1,9 +1,9 @@
 const Card = ({img, name, tag}) => {
   return (
-    <div className="relative overflow-hidden rounded-lg shadow transition hover:shadow-lg">
+    <div className="relative w-[360px] overflow-hidden rounded-lg shadow transition hover:shadow-lg">
         <img alt=""
             src={img}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute bg-center bg-cover inset-0 h-full w-full object-cover"
         />
 
         <div className="relative h-96 grid bg-gradient-to-t from-slate-900/50 to-slate-900/25 pt-32 sm:pt-48 lg:pt-64">
