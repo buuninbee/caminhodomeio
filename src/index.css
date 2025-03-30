@@ -6,6 +6,10 @@ body{
     background-color: #000000;
 }
 
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+
 @layer base {
   :root {
         --radius: 0.5rem;
