@@ -1,6 +1,6 @@
 import cn from "@/utils/cn"
 
-const defaultTag = 'px-3 py-2 rounded-md sm:text-xl md:text-2xl'
+const defaultTag = 'px-3 py-2 max-w-max max-h-max rounded-md sm:text-xl md:text-2xl'
 const traditions = {
   'Zen': "text-blue-700 bg-blue-700/20",
   'Theravada': "text-red-600 bg-red-600/20",
