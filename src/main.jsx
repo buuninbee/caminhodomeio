@@ -17,21 +17,25 @@ import Karma from './pages/Karma'
 import ThreeMentalPoisons from './pages/ThreeMentalPoisons'
 import Books from './pages/Books'
 
+import { HelmetProvider } from 'react-helmet-async';
+
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-  <Nav />
-    <Routes>
-      <Route path='/'  element={<App />}/>
-      <Route path='/nobre-caminho-octuplo'  element={<EightfoldPath />}/>
-      <Route path='/mestres-notaveis'  element={<NotableMasters />}/>
-      <Route path='/meditacao'  element={<Meditation />}/>
-      <Route path='/cinco-preceitos'  element={<FivePrecepts />}/>
-      <Route path='/quatros-nobres-verdades'  element={<FourNobleTruths />}/>
-      <Route path='/tres-joias'  element={<ThreeJewels />}/>
-      <Route path='/karma'  element={<Karma />}/>
-      <Route path='/tres-venenos-mentais'  element={<ThreeMentalPoisons />}/>
-      <Route path='/livros'  element={<Books />}/>
-    </Routes>
-    <Footer />
-  </BrowserRouter>,
+  <HelmetProvider>
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route path='/'  element={<App />}/>
+        <Route path='/nobre-caminho-octuplo'  element={<EightfoldPath />}/>
+        <Route path='/mestres-notaveis'  element={<NotableMasters />}/>
+        <Route path='/meditacao'  element={<Meditation />}/>
+        <Route path='/cinco-preceitos'  element={<FivePrecepts />}/>
+        <Route path='/quatros-nobres-verdades'  element={<FourNobleTruths />}/>
+        <Route path='/tres-joias'  element={<ThreeJewels />}/>
+        <Route path='/karma'  element={<Karma />}/>
+        <Route path='/tres-venenos-mentais'  element={<ThreeMentalPoisons />}/>
+        <Route path='/livros'  element={<Books />}/>
+      </Routes>
+      <Footer />
+    </BrowserRouter>,
+  </HelmetProvider>
 )
