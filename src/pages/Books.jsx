@@ -7,6 +7,7 @@ import {motion} from "motion/react"
 import booksBg from "../assets/books.png"
 import Description from "@/components/Description";
 import Title from "@/components/Title";
+import Seo from "@/components/Seo";
 
 
 const firebaseConfig = initializeApp({
@@ -43,6 +44,7 @@ const Books = () => {
 
   return (
     <>
+    <Seo title="Livros Budistas - Caminho do meio" description="Esses livros são apenas sugestões, não são obrigatórios. Eles servem como uma base para você se aprofundar no Budismo e entender melhor seus ensinamentos. Use-os como ponto de partida para explorar o que faz sentido para você nessa jornada." img={booksBg} />
     <div className='grid mt-16 lg:mt-24'>
         <motion.div initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
