@@ -9,6 +9,7 @@ import eightfoldpathBg from "../assets/eightfoldPath.png"
 
 import {motion} from "motion/react"
 import LinkToVideos from "@/components/LinkToVideos"
+import Seo from "@/components/Seo"
 
 
 const videosToEightfoldPath = [
@@ -28,7 +29,9 @@ const videosToEightfoldPath = [
 
 const EightfoldPath = () => {
   return (
-    <>      
+    <>  
+    <Seo title="O Nobre Caminho Óctuplo - Caminho do meio" description="É extre­ma­men­te impor­tan­te ter a Compreensão Correta, por­que dela flui dire­ta­men­te tudo o mais no budis­mo. No come­ço, não pode­mos espe­rar que nossa compreensão este­ja em per­fei­ta harmonia com o Darma. Se fosse assim, já não tería­mos nada a apren­der. Daí que um aspec­to fun­da­men­tal da Compreensão Correta é a von­ta­de de empreen­der um autoquestionamento, sobre­tu­do no que diz respeito ao nosso com­por­ta­men­to." img={eightfoldpathBg} />
+
       <div className='grid mt-16 lg:mt-24'>
         <motion.div initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -37,7 +40,7 @@ const EightfoldPath = () => {
                 delay: 0.8,
                 ease: [0, 0.71, 0.2, 1.01],
             }} className="absolute z-10 grid self-end px-4 sm:px-9 lg:px-16">
-            <Title title="O nobre caminho octúplo" />
+            <Title title="c" />
         </motion.div>
         <img className="object-cover z-0 w-full lg:h-[700px] lg:object-fill" src={eightfoldpathBg} alt="Um grupo de monges caminhando" />
       </div>
