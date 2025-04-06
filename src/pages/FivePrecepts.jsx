@@ -8,6 +8,7 @@ import {motion} from "motion/react"
 import Badge from "@/components/Badge"
 import Line from "@/components/Line"
 import fiveprecepts from "@/utils/fiveprecepts"
+import Seo from "@/components/Seo"
 
 const videosToFivePrecepts = [
     {
@@ -33,6 +34,8 @@ const videosToFivePrecepts = [
 const FivePrecepts = () => {
   return (
     <>
+     <Seo title="Os Cinco Preceitos - Caminho do meio" description="Os Cinco Preceitos podem parecer negativos, pois indicam o que não se deve fazer, mas não especificam o que se deve fazer. Eles são fundamentais para a ética budista, porém não a compõem por completo. Iniciamos pelo reconhecimento de nossas ações negativas, com o objetivo de cessá-las. É esse o propósito dos Cinco Preceitos." img={fivePreceptsBg} />
+
      <div className='grid mt-16 lg:mt-24'>
             <motion.div initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
