@@ -2,7 +2,7 @@ import fourNobleTruthsBg from "../assets/fourNobleTruths.png"
 import Title from "@/components/Title"
 import Description from "@/components/Description"
 import LinkToVideos from "@/components/LinkToVideos"
-
+import Seo from "@/components/Seo"
 
 import {motion} from "motion/react"
 import Badge from "@/components/Badge"
@@ -32,6 +32,7 @@ const videosToFourNobleTruths = [
 const FourNobleTruths = () => {
   return (
     <>
+         <Seo title="As Quatros Nobres Verdades - Caminho do meio" description="As quatro nobres verdades são fatos elementares que delimitam o caminho para superarmos nossos problemas. Esse foi o primeiro ensinamento do Buda e é a estrutura básica de todos os demais ensinamentos budistas." img={fourNobleTruthsBg} />
          <div className='grid mt-16 lg:mt-24'>
             <motion.div initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
