@@ -32,7 +32,7 @@ const Nav = () => {
                                 <NavLink className="text-primary transition hover:text-gray-300 md:text-lg" to="livros">Livros</NavLink>
                             </li>
                             <li>
-                                <NavLink className="text-primary transition hover:text-gray-300 md:text-lg" to="mestres-notaveis">Mestres notaveis</NavLink>
+                                <NavLink className="text-primary transition hover:text-gray-300 md:text-lg" to="mestres-notaveis">Mestres notáveis</NavLink>
                             </li>
                             <li className="text-primary transition hover:text-gray-300 md:text-lg grid grid-cols-auto gap-2 relative cursor-pointer" onMouseEnter={() => {setDropmenu(!dropMenu)}}>
                                 Fundamentos do budismo

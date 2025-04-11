@@ -8,6 +8,7 @@ import {motion} from "motion/react"
 import Badge from "@/components/Badge"
 import Line from "@/components/Line"
 import threejewels from "@/utils/threejewels"
+import Seo from "@/components/Seo"
 
 const videosToThreeJewels = [
     {
@@ -27,6 +28,7 @@ const videosToThreeJewels = [
 const ThreeJewels = () => {
   return (
     <>
+      <Seo title="As três joias - Caminho do meio" description="As Três Joias fazem parte da tradição budista, sendo o conjunto dos ensinamentos do Buda, em que Buda representa o Desperto, o Dharma representa os ensinamentos e a Sangha representa a Comunidade dos Discípulos/seguidores. Os budistas se inspiram nessas Três Joias para obter a força e a vontade necessárias para transformar o que é possível, a coragem e a paz para aceitar o imutável e a sabedoria para diferenciar um do outro." img={threeJewelsBg} />
         <div className='grid mt-16 lg:mt-24'>
             <motion.div initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
