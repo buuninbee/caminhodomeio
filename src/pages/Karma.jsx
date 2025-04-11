@@ -2,6 +2,7 @@ import karmaBg from "../assets/karma.png"
 import Title from "@/components/Title"
 import Description from "@/components/Description"
 import LinkToVideos from "@/components/LinkToVideos"
+import Seo from "@/components/Seo"
 
 
 import {motion} from "motion/react"
@@ -24,6 +25,7 @@ const videosToKarma = [
 const Karma = () => {
   return (
     <>
+    <Seo title="Karma - Caminho do meio" description="Karma é um termo amplamente reconhecido, mas frequentemente mal interpretado no Ocidente. Muitos acreditam que se refere ao 'destino' ou a uma forma de justiça cósmica. Contudo, essa não é a visão budista sobre o karma, que é mais complexa e relacionada às ações e suas consequências, não sendo um simples mecanismo de recompensa ou punição." img={karmaBg} />
     <div className='grid mt-12'>
         <motion.div initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
