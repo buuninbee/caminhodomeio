@@ -30,7 +30,7 @@ const videosToMeditation = [
 const Meditation = () => {
   return (
     <>
-         <Seo title="Meditação - Caminho do meio" description="Há uma diversidade de tipos de meditação budista, abrangendo múltiplas abordagens, métodos e técnicas, cada um com suas próprias finalidades. Algumas escolas enfatizam um método específico, enquanto outras incorporam uma variedade de métodos." img={meditationBg} />
+      <Seo title="Meditação - Caminho do meio" description="Há uma diversidade de tipos de meditação budista, abrangendo múltiplas abordagens, métodos e técnicas, cada um com suas próprias finalidades. Algumas escolas enfatizam um método específico, enquanto outras incorporam uma variedade de métodos." img={meditationBg} />
       <div className='grid mt-16 lg:mt-24'>
         <motion.div initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
