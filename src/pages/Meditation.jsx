@@ -6,6 +6,7 @@ import LinkToVideos from "@/components/LinkToVideos"
 
 
 import {motion} from "motion/react"
+import Seo from "@/components/Seo"
 
 const videosToMeditation = [
   {
@@ -29,6 +30,7 @@ const videosToMeditation = [
 const Meditation = () => {
   return (
     <>
+         <Seo title="Meditação - Caminho do meio" description="Há uma diversidade de tipos de meditação budista, abrangendo múltiplas abordagens, métodos e técnicas, cada um com suas próprias finalidades. Algumas escolas enfatizam um método específico, enquanto outras incorporam uma variedade de métodos." img={meditationBg} />
       <div className='grid mt-16 lg:mt-24'>
         <motion.div initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -44,7 +46,7 @@ const Meditation = () => {
 
       <main className="px-4 sm:px-9 lg:px-16">
         <div className="pb-6">
-          <Description description="Há uma diversidade de tipos de meditação budista, abrangendo múltiplas abordagens, métodos e técnicas, cada um com suas próprias finalidades. Algumas escolas enfatizam um método específico, enquanto outras incorporam uma variedade de métodos" />
+          <Description description="Há uma diversidade de tipos de meditação budista, abrangendo múltiplas abordagens, métodos e técnicas, cada um com suas próprias finalidades. Algumas escolas enfatizam um método específico, enquanto outras incorporam uma variedade de métodos." />
         </div>
 
         <section className="pb-8">
