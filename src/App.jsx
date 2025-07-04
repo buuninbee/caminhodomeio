@@ -1,7 +1,8 @@
 import budaHome from './assets/budaHome.png'
 import budaBackground from './assets/budaBackground.svg'
+import arrowLeft from "./assets/arrow-left-linear.svg"
+import arrowRight from "./assets/arrow-right-linear.svg"
 
-import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
 
 import Title from "./components/Title"
 import Description from "./components/Description"
@@ -169,7 +170,7 @@ const sliderLeft = () => {
       </article>
 
       <section className="pb-8 relative">
-        <div>
+        <div className='pb-2'>
           <Title title="Mestres notaveis" />
         </div>
 
@@ -192,8 +193,8 @@ const sliderLeft = () => {
         </div>
         <div className="flex items-center mt-3 justify-between">
           <div className='flex gap-4 text-white cursor-pointer'>
-            <FaArrowCircleLeft onClick={sliderRight} size={30} />
-            <FaArrowCircleRight onClick={sliderLeft} size={30} />
+            <img className='w-10 rounded-full transition hover:delay-75 hover:bg-zinc-700' onClick={sliderRight} src={arrowLeft} alt="seta para esquerda" />
+            <img className='w-10 rounded-full transition hover:delay-75 hover:bg-zinc-700' onClick={sliderLeft}  src={arrowRight} alt="seta para direita" />
           </div>
 
           <Button variant='outline' text="Ver mais" path="mestres-notaveis" />
