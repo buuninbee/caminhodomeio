@@ -40,7 +40,7 @@ const EightfoldPath = () => {
                 delay: 0.8,
                 ease: [0, 0.71, 0.2, 1.01],
             }} className="absolute z-10 grid self-end px-4 sm:px-9 lg:px-16">
-            <Title title="c" />
+            <Title title="O Nobre Caminho Óctuplo" />
         </motion.div>
         <img className="object-cover z-0 w-full lg:h-[700px] lg:object-fill" src={eightfoldpathBg} alt="Um grupo de monges caminhando" />
       </div>
