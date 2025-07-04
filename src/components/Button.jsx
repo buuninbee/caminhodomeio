@@ -1,7 +1,7 @@
 import { NavLink } from "react-router"
 import cn from "../utils/cn"
 
-const defaultButtonClasses = "text-base font-sans justify-self-center rounded-md py-2 px-5 sm:px-8 sm:py-3 sm:text-xl";
+const defaultButtonClasses = "text-lg font-sans justify-self-center rounded-md py-2 px-5 sm:px-8 sm:py-3 sm:text-xl";
 
 const variants = {
   'filled': "bg-segundary text-onPrimary hover:bg-amber-400",
