@@ -18,11 +18,13 @@ import ThreeMentalPoisons from './pages/ThreeMentalPoisons'
 import Books from './pages/Books'
 
 import { HelmetProvider } from 'react-helmet-async';
+import ScrollToTop from './utils/scrollToTop'
 
 createRoot(document.getElementById('root')).render(
   <HelmetProvider>
     <BrowserRouter>
       <Nav />
+      <ScrollToTop/>
       <Routes>
         <Route path='/'  element={<App />}/>
         <Route path='/nobre-caminho-octuplo'  element={<EightfoldPath />}/>
