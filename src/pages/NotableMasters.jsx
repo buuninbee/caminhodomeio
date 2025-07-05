@@ -66,7 +66,7 @@ const NotableMasters = () => {
                       <img alt="" src={master.imagem} className="bg-center rounded-sm bg-cover inset-0 h-full w-full object-cover"/>
                     </div>
 
-                    <div className="grid gap-5">
+                    <div className="grid gap-2">
                       <div className="grid items-end">
                         <Tag tradition={master.tradição}>{master.tradição}</Tag>
                       </div>
