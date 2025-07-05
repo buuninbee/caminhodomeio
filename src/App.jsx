@@ -171,7 +171,7 @@ const sliderLeft = () => {
 
       <section className="pb-8 relative">
         <div className='pb-2'>
-          <Title title="Mestres notaveis" />
+          <Title title="Mestres notáveis" />
         </div>
 
         <div className="overflow-hidden h-96">
