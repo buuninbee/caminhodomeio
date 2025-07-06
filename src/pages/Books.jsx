@@ -74,13 +74,13 @@ const Books = () => {
                     return(
                         <li key={book.título} className="text-primary mb-12 lg:mb-16">
                             <Tag tradition={book.tradição} >{book.tradição}</Tag>
-                            <h2 className="text-2xl pt-3 md:text-3xl md:pb-2">{book.título}</h2>
-                            <div className="grid gap-1 mb-2 text-lg md:text-2xl">
+                            <h2 className="text-2xl pb-2 pt-3 md:text-3xl md:pb-2">{book.título}</h2>
+                            <div className="grid mb-2 text-lg md:text-2xl">
                                 <h3>{`Autor: ${book.autor}`}</h3>
                                 <h3>{`Ano: ${book.ano}`}</h3>
                             </div>
-                            <p className="text-xl mb-4 lg:text-2xl">{book.descrição}</p>
-                            <a className="text-base font-sans justify-self-center rounded-md py-2 px-5 sm:px-8 sm:py-3 sm:text-xl bg-segundary text-onPrimary hover:bg-amber-400" href={book.link} target="_blank" rel="noopener noreferrer">baixar</a>
+                            <p className="text-xl pb-4 sm:pb-7 lg:text-2xl">{book.descrição}</p>
+                            <a className="text-base font-sans font-medium justify-self-center rounded-md py-2 px-5 sm:px-8 sm:py-3 sm:text-xl bg-segundary text-onPrimary hover:bg-amber-400" href={book.link} target="_blank" rel="noopener noreferrer">Fazer Download </a>
                         </li>
                     )
                 })}
