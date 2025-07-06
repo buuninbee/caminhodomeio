@@ -23,6 +23,7 @@ import Card from "./components/Card"
 
 import { db, collection, getDocs} from "./utils/firebaseConfig"
 import { useEffect, useState } from 'react'
+import Seo from './components/Seo'
 
 
 function App() {
@@ -56,14 +57,18 @@ const sliderLeft = () => {
   slider.scrollLeft = slider.scrollLeft + 380
 }
 
-  const sliderRight = () => {
+const sliderRight = () => {
     const slider = document.getElementById("slider")
 
     slider.scrollLeft = slider.scrollLeft - 380
-  }
+}
+
+
 
   return (
     <>
+    <Seo title="Home - Caminho do meio" description="Buda Shakyamuni, também conhecido como Siddhartha Gautama, foi o fundador do budismo. Ele nasceu em uma família real no que é hoje o Nepal, por volta de 563 a.C. Como jovem príncipe, Siddhartha teve uma vida confortável e protegida, mas um dia decidiu sair do palácio para explorar o mundo exterior. Durante sua jornada, ele testemunhou a velhice, a doença e a morte, o que o levou a uma profunda crise existencial." img={budaHome} />
+
     <div className='grid mt-16 lg:mt-24'>
         <motion.div initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -77,7 +82,7 @@ const sliderLeft = () => {
             <p className="text-white font-serif text-xs text-center italic sm:text-lg lg:text-2xl">Buda Sakyamuni, 2600 anos atrás - Dhammapada Verso 238</p>
         </motion.div>
 
-        <img className="object-cover z-0 w-full lg:h-[700px] lg:object-fill" src={budaHome} alt="Buda junto com seus discipulos" />
+        <img className="object-cover z-0 w-full lg:h-[700px] lg:object-fill" src={budaHome} alt="Buda junto com seus discipulos" title='Imagem de Buda Sakyamuni em uma floresta, meditando sob uma árvore.' />
     </div>
 
     <main className="px-4 grid sm:px-9 lg:px-16">
@@ -166,7 +171,7 @@ const sliderLeft = () => {
           </AccordionContent>
         </AccordionItem>
         </Accordion>
-        <img className="object-cover z-0 w-auto h-full absolute top-20 -right-4" src={budaBackground} alt="BUda junto com seus discipulos" />
+        <img className="object-cover z-0 w-auto h-full absolute top-20 -right-4" src={budaBackground} alt="Rosto do buda sakyamuni" title="Escultura detalhada do rosto sereno de Buda Sakyamuni." />
       </article>
 
       <section className="pb-8 relative">
@@ -193,8 +198,8 @@ const sliderLeft = () => {
         </div>
         <div className="flex items-center mt-3 justify-between">
           <div className='flex gap-4 text-white cursor-pointer'>
-            <img className='w-10 rounded-full transition hover:delay-75 hover:bg-zinc-700' onClick={sliderRight} src={arrowLeft} alt="seta para esquerda" />
-            <img className='w-10 rounded-full transition hover:delay-75 hover:bg-zinc-700' onClick={sliderLeft}  src={arrowRight} alt="seta para direita" />
+            <img className='w-10 rounded-full transition hover:delay-75 hover:bg-zinc-700' onClick={sliderRight} src={arrowLeft} alt="seta para esquerda" title='Seta para avançar o carrossel para a esquerda.' />
+            <img className='w-10 rounded-full transition hover:delay-75 hover:bg-zinc-700' onClick={sliderLeft}  src={arrowRight} alt="seta para direita" title='Seta para avançar o carrossel para a direita.'  />
           </div>
 
           <Button variant='outline' text="Ver mais" path="mestres-notaveis" />
