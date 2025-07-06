@@ -5,7 +5,6 @@ import upArrow from "../assets/upArrow.svg"
 import openIcon from "../assets/openIcon.svg"
 import closeIcon from "../assets/closeIcon.svg"
 
-
 import { NavLink } from "react-router"
 
 const Nav = () => {
@@ -14,17 +13,17 @@ const Nav = () => {
 
   return (
     <header className="bg-transparent/95 fixed w-full z-20 top-0">
-        <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 lg:py-4">
+        <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 lg:py-4">
             <div className="flex h-16 items-center justify-between">
                 <div className="md:flex md:items-center md:gap-12 ">
                     <NavLink className="block" to="/">
-                        <img className={`w-12 h-full ${openMenu ? "block" : "hidden"} lg:w-16 lg:block`} src={budaLogo} alt="A logo do buda em meditaçãos" />
+                        <img className={`w-12 h-full ${openMenu ? "block" : "hidden"} lg:w-16 lg:block`} src={budaLogo} alt="A logo do buda em meditaçãos" title="Voltar para home" />
                     </NavLink>
                 </div>
 
                 <div className='hidden md:block'>
                     <nav aria-label="Global">
-                        <ul className="flex items-center gap-6 text-sm">
+                        <ul className="flex items-center cursor-pointer select-none gap-6 text-sm">
                             <li>
                                 <NavLink className="text-primary transition hover:text-gray-300 md:text-lg" to="meditacao">Meditação</NavLink>
                             </li>
@@ -34,9 +33,9 @@ const Nav = () => {
                             <li>
                                 <NavLink className="text-primary transition hover:text-gray-300 md:text-lg" to="mestres-notaveis">Mestres notáveis</NavLink>
                             </li>
-                            <li className="text-primary transition hover:text-gray-300 md:text-lg grid grid-cols-auto gap-2 relative cursor-pointer" onMouseEnter={() => {setDropmenu(!dropMenu)}}>
+                            <li className="text-primary transition hover:text-gray-300 md:text-lg grid grid-cols-auto gap-2 relative cursor-pointer" onClick={() => {setDropmenu(!dropMenu)}}>
                                 Fundamentos do budismo
-                                <img className="w-3 h-full col-start-2" src={`${dropMenu ? upArrow : downArrow }`} alt="" />
+                                <img className="w-3 h-full col-start-2" src={`${dropMenu ? upArrow : downArrow }`} alt="seta do menu" />
                                 <ul className={`absolute w-full top-6 bg bg-transparent/95 py-3 px-5 flex-col gap-2 ${dropMenu ? "flex" : "hidden"}`}>
                                     <li className="border-b border-gray-800">
                                         <NavLink className="text-primary transition hover:text-gray-300" to="nobre-caminho-octuplo">O nobre caminho</NavLink>
@@ -63,7 +62,7 @@ const Nav = () => {
                 </div>
 
                 <div className='w-full grid md:hidden'>
-                    <nav className={`col-span-3 relative ${openMenu ? "hidden" : "grid"} `} aria-label="Global">
+                    <nav className={`${openMenu ? "hidden" : "grid"} col-span-3 relative`} aria-label="Global">
                         <ul className="flex w-screen h-screen justify-self-center bg-transparent/95 flex-col pl-8 pt-9 items-left absolute gap-3 text-2xl">
                             <li>
                                 <NavLink className="text-primary transition hover:text-gray-300 md:text-lg" to="meditacao">Meditação</NavLink>
