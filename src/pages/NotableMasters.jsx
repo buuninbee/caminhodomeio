@@ -8,7 +8,33 @@ import Description from "@/components/Description"
 import Tag from "@/components/Tag"
 import Seo from "@/components/Seo"
 
+import { openDB } from "idb";
 
+const dbPromise = openDB("meuBanco", 1, {
+  upgrade(db) {
+    if (!db.objectStoreNames.contains("mestres")) {
+      db.createObjectStore("mestres", { keyPath: "id" });
+    }
+  },
+});
+
+async function salvarNoIndexedDB(masters) {
+  const db = await dbPromise;
+  const tx = db.transaction("mestres", "readwrite");
+  const store = tx.objectStore("mestres");
+
+  await store.clear(); // Limpa os dados antigos
+  for (const master of masters) {
+    await store.put(master);
+  }
+
+  await tx.done;
+}
+
+async function lerDoIndexedDB() {
+  const db = await dbPromise;
+  return await db.getAll("mestres");
+}
 const NotableMasters = () => {
   const [masters, setMasters] = useState([])
 
@@ -16,19 +42,23 @@ const NotableMasters = () => {
 
   useEffect(() => {
     const getMasters = async () => {
-        try {
-            // Primeiro, tenta carregar os dados do cache
-            const data = await getDocs(mastersCollectionRef, { source: "cache" });
-            if (!data.empty) {
-                setMasters(data.docs.map(doc => doc.data()));
-            }
-
-            // Se o cache não tiver dados, busca do servidor
-            const freshData = await getDocs(mastersCollectionRef, { source: "server" });
-            setMasters(freshData.docs.map(doc => doc.data()));
-        } catch (error) {
-            console.error("Erro ao buscar mestres:", error);
+      try {
+        const cacheData = await lerDoIndexedDB();
+        if (cacheData.length > 0) {
+          setMasters(cacheData);
         }
+
+        const freshData = await getDocs(mastersCollectionRef);
+        const mapped = freshData.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        setMasters(mapped); 
+        await salvarNoIndexedDB(mapped);
+      } catch (error) {
+        console.error("Erro ao buscar mestres:", error);
+      }
     };
 
     getMasters();
