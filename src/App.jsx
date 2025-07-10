@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react'
-
 import budaHome from './assets/budaHome.png'
 import budaBackground from './assets/budaBackground.svg'
 import arrowLeft from "./assets/arrow-left-linear.svg"
 import arrowRight from "./assets/arrow-right-linear.svg"
+
 
 import Title from "./components/Title"
 import Description from "./components/Description"
@@ -11,8 +10,6 @@ import Badge from "./components/Badge"
 import eightfoldPath from "./utils/eightfoldPath"
 import Line from "./components/Line"
 import Button from "./components/Button"
-import Card from "./components/Card"
-import Seo from './components/Seo'
 
 import {motion} from "motion/react"
 import {
@@ -22,78 +19,47 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
+import Card from "./components/Card"
 
 import { db, collection, getDocs} from "./utils/firebaseConfig"
-import { openDB } from "idb";
+import { useEffect, useState } from 'react'
+import Seo from './components/Seo'
 
-const dbPromise = openDB("meuBanco", 1, {
-  upgrade(db) {
-    if (!db.objectStoreNames.contains("mestres")) {
-      db.createObjectStore("mestres", { keyPath: "id" });
-    }
-  },
-});
-
-async function salvarNoIndexedDB(masters) {
-  const db = await dbPromise;
-  const tx = db.transaction("mestres", "readwrite");
-  const store = tx.objectStore("mestres");
-
-  await store.clear(); // Limpa os dados antigos
-  for (const master of masters) {
-    await store.put(master);
-  }
-
-  await tx.done;
-}
-
-async function lerDoIndexedDB() {
-  const db = await dbPromise;
-  return await db.getAll("mestres");
-}
 
 function App() {
   const [masters, setMasters] = useState([])
-
   const mastersCollectionRef = collection(db, "mestres")
 
   useEffect(() => {
     const getMasters = async () => {
       try {
-        // 1. Tenta ler do IndexedDB
-        const cacheData = await lerDoIndexedDB();
-        if (cacheData.length > 0) {
-          setMasters(cacheData);
+        // Primeiro, tenta carregar os dados do cache
+        const data = await getDocs(mastersCollectionRef, { source: "cache" });
+        if (!data.empty) {
+            setMasters(data.docs.map(doc => doc.data()));
         }
-
-        // 2. Busca dados atualizados do servidor
-        const freshData = await getDocs(mastersCollectionRef);
-        const mapped = freshData.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-
-        setMasters(mapped); // Atualiza o estado
-        await salvarNoIndexedDB(mapped); // Salva no IndexedDB
-      } catch (error) {
-        console.error("Erro ao buscar mestres:", error);
-      }
-    };
   
-    getMasters();
+        // Se o cache não tiver dados, busca do servidor
+        const freshData = await getDocs(mastersCollectionRef, { source: "server" });
+        setMasters(freshData.docs.map(doc => doc.data()));
+    } catch (error) {
+        console.error("Erro ao buscar mestres:", error);
+    }
+  };
+    getMasters()
   }, []);
 
-  const sliderLeft = () => {
+ const sliderLeft = () => {
   const slider = document.getElementById("slider")
 
   slider.scrollLeft = slider.scrollLeft + 380
-  }
+ }
 
-  const sliderRight = () => {
+ const sliderRight = () => {
     const slider = document.getElementById("slider")
 
     slider.scrollLeft = slider.scrollLeft - 380
-  }
+ }
 
   return (
     <>
