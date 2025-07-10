@@ -20,8 +20,9 @@ import {
 } from "@/components/ui/accordion"
 
 import Card from "./components/Card"
+import { collection, getDocs } from 'firebase/firestore/lite';
 
-import { db, collection, getDocs} from "./utils/firebaseConfig"
+import { db } from "./utils/firebaseConfig"
 import { useEffect, useState } from 'react'
 import Seo from './components/Seo'
 

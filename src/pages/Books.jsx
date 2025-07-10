@@ -1,25 +1,18 @@
 import Tag from "@/components/Tag";
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { collection, getDocs } from 'firebase/firestore/lite';
 import { useState, useEffect } from "react";
-
+import { db } from "@/utils/firebaseConfig";
 import {motion} from "motion/react"
+
 import booksBg from "../assets/books.png"
 import Description from "@/components/Description";
 import Title from "@/components/Title";
 import Seo from "@/components/Seo";
 
 
-const firebaseConfig = initializeApp({
-  apiKey: "AIzaSyAH7acwDSL8vdge-EPA883WrT0xGuvql7g",
-  authDomain: "caminhodomeio.firebaseapp.com",
-  projectId: "caminhodomeio"
-});
-
 const Books = () => {
   const [books,setBooks] = useState([])
 
-  const db = getFirestore(firebaseConfig)
   const booksCollectionRef = collection(db, "livros")
 
   useEffect(() => {
