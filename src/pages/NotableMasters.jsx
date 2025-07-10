@@ -1,6 +1,7 @@
 import Title from "@/components/Title"
 import { useState, useEffect } from "react"
-import { db, collection, getDocs} from "../utils/firebaseConfig"
+import { collection, getDocs } from 'firebase/firestore/lite';
+import { db } from "../utils/firebaseConfig"
 import notableMatersBg from "../assets/notableMasters.png"
 
 import {motion} from "motion/react"
