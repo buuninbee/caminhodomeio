@@ -118,7 +118,7 @@ function App() {
         </div>
       </section>
 
-      <article className="mb-8 relative sm:mb-16">
+      <article className="mb-20 relative sm:mb-16">
         <div className="pb-2 ">
           <Title title="Tem alguma dúvida? Nós temos respostas" />
         </div>
