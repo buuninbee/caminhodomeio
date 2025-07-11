@@ -73,7 +73,7 @@ const Books = () => {
                                 <h3>{`Ano: ${book.ano}`}</h3>
                             </div>
                             <p className="text-xl pb-4 sm:pb-7 lg:text-2xl">{book.descrição}</p>
-                            <a className="text-base font-sans font-medium justify-self-center rounded-md py-2 px-5 sm:px-8 sm:py-3 sm:text-xl bg-segundary text-onPrimary hover:bg-amber-400" href={`/${book.link}`} target="_blank" rel="noopener noreferrer">Fazer Download </a>
+                            <a className="text-base font-sans font-medium justify-self-center rounded-md py-2 px-5 sm:px-8 sm:py-3 sm:text-xl bg-segundary text-onPrimary hover:bg-amber-400" href={book.link} target="_blank" rel="noopener noreferrer">Fazer Download </a>
                         </li>
                     )
                 })}
