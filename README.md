@@ -22,7 +22,7 @@ Este projeto utiliza o seguinte software:
 - [Node.js](https://nodejs.org/)
 - [Tailwindcss](https://tailwindcss.com/)
 - [Figma](https://www.figma.com/)
-- [MongoDB](https://www.mongodb.com/pt-br)
+- [Firebase](https://firebase.google.com/?hl=pt-br)
 - [Shadcn](https://ui.shadcn.com/)
 - [Motion](https://motion.dev/)
 
